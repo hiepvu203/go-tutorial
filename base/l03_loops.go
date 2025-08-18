@@ -20,4 +20,13 @@ func GetStudent() {
 func main() {
 	GetEachForFruit()
 	GetStudent()
+
+	// range
+	pow := make([]int, 10)
+	for i := range pow {
+		pow[i] = 1 << uint(i) // == 2**i  --  toán tử dịch bit trái
+	}
+	for _, value := range pow {
+		fmt.Printf("%d\n", value)
+	}
 }
