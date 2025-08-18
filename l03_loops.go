@@ -16,3 +16,8 @@ func GetStudent() {
 		fmt.Printf("%v\t%v\n", idx, value)
 	}
 }
+
+func main() {
+	GetEachForFruit()
+	GetStudent()
+}

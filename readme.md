@@ -16,13 +16,18 @@
   - Import packages
   - Functions
   - Statements and expressions
+### Packages
+- Every Go programs is made up of packages
+- Programs start running in package `main`
 
 ### Variables
 #### Datatype
-  - `int` stores integers
-  - `string` stores text
+  - `int` `int8` `int16` `int32` `int64`
+  - `uint` `uint8` `uint16` `uint32` `uint64`
+  - `string`
+  - `complex64` `complex128`
   - `bool` stores values with two states: true or false
-  - `float32` stores floating point numbers, with decimals
+  - `float32` `float64` stores floating point numbers, with decimals
 
 #### Declare a variable
   - `var name = "Hiệp"` (global)
@@ -119,3 +124,33 @@ Slices are similar to arrays, but are more powerful and flexible
             return output
         }
 
+### Struct
+#### Declare
+        type struct_name struct {
+            member1 datatype
+            member2 datatype ...
+        }
+
+### Maps
+- Maps are used to store data values in key:value pairs
+- Each element in a map is a key:value pair
+- The default value of a map is nil
+- Maps hold references to an underlying hash table
+
+#### Create maps (using var and :=)
+        var a = map[keyType]ValueType{key1:value1, key2:value2,...}
+        b := map[keyType]ValueType{key1:value1, key2:value2,...}
+#### Create maps (using make() function)
+        var a = make(map[KeyType]ValueType)
+        b := make(map[KeyType]ValueType)
+#### Update and Add Map Elements
+        map_name[key] = value
+#### Remove element
+        delete(map_name, key)
+#### Check for specific elements 
+        val, ok := map_name
+#### Iterate over maps
+        for k, v := range a {
+            fmt.Printf("%v : %v, ", k, v)
+        }
+#### 

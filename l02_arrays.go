@@ -32,3 +32,10 @@ func AppendSlice() {
 	myslice1 = append(myslice1, 10, 21)
 	fmt.Println(len(myslice1), cap(myslice1))
 }
+
+func main() {
+	fmt.Println(GetMyTypes())
+	fmt.Println(GetMyScores())
+	fmt.Println(CreateSliceFromArray())
+	AppendSlice()
+}
