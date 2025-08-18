@@ -153,4 +153,43 @@ Slices are similar to arrays, but are more powerful and flexible
         for k, v := range a {
             fmt.Printf("%v : %v, ", k, v)
         }
-#### 
+
+### Defer
+- A defer statement delays the execution of a function until the parent function is about finish.
+- Used case: Close resource (file, DB connection, etc.)
+- Order: LIFO 
+
+### Pointer
+- Go has pointers. A pointer holds the memory address of a value
+        
+        var p *int
+- The `&` operator generates a pointer to its operand
+
+        i := 42
+        p = &i
+
+#### Pointers to structs
+- Struct fields can be accessed through a struct pointer.
+- To access the field X of a struct when could write (*p).X. 
+- However, the language permits us instead to write just p.X, without the explicit dereference.
+        
+
+### Methods
+- Method is a function that has a `receiver`, that function belongs to a specific data type
+
+        func (receiver_name, receiver_type) methodName (param) return_type { // block code }
+
+- Have two options :
+  - Value receiver:
+            
+        func (r Rectangle) Area() float64 {...}
+  - Pointer receiver
+
+        func (r *Rectangle) Scale(factor float64) {
+            r.Width *= factor
+            r.Height *= factor
+        }
+- When to use Value receiver and Pointer receiver?
+  - Value receiver: read data, calculate
+  - Pointer receiver: Modify data, struct
+- Generate rule: if any method of a type uses a pointer receiver, then all other methods of that type should also use pointer receivers.
