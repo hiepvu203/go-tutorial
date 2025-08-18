@@ -18,13 +18,104 @@
   - Statements and expressions
 
 ### Variables
-- Datatype
+#### Datatype
   - `int` stores integers
   - `string` stores text
   - `bool` stores values with two states: true or false
   - `float32` stores floating point numbers, with decimals
 
-- Declare a variable
+#### Declare a variable
   - `var name = "Hiệp"` (global)
   - `name := "Hiệp"` (function)
   - With the above two methods, the compiler can automatically infer the datatype for the variable
+#### Naming conventions
+  - Use camelCase (not snake_case): `userName (true)`
+  - Use PascalCase for exported identifiers
+      - If a variable/function/type starts with a capital letter, its exported (public)
+    
+            var UserName string // Exported - can be used outside package
+    
+      - If it starts with a lowercase letter, it's unexported (private to the package)
+      
+            var userName string // Unexported - only within package
+
+### Arrays
+#### Declare an Array
+- With `var` keyword
+        
+        var my_number = [4]int{0,1,2,3} // length us defined
+        
+        or
+
+        var mu_number = [...]int{0,1,2,3}  // length is infered
+
+- With the `:=` sign
+
+        my_number := [4]int{0,1,2,3} or my_number := [...]int{0,1,2,3}
+
+### Slices
+Slices are similar to arrays, but are more powerful and flexible
+
+#### Syntax
+        myslice := []int{}
+#### Create a slice from array
+        var myarray = [length]datatyped{}
+        myslice := myarray[start:end]
+- Slice `[start:end]` gets elements from index `start` to index `end - 1`
+#### Create a slice with the make() function
+        slice := make([]datatyped, len, cap)
+#### Append elements to a slice
+        slice = append(slice, element1, element2,...)
+- Go automatically increases capacity according to the "double" rule when it needs to expand a slice.
+
+### Conditions
+#### Syntax
+        if <ccondition> { // statements }
+
+### Switch
+#### Syntax
+- Single case
+
+        switch expression {
+            case x:
+                // code block
+            ...
+            default:
+                // code block
+        }
+
+  - Multi-case
+
+          switch expression {
+              case x,y:
+              // code block if expression is evaluated to x or y
+              case v,w:
+              // code block if expression is evaluated to v or w
+              case z:
+              ...
+              default:
+              // code block if expression is not found in any cases
+          }
+
+### Loops
+#### Syntax
+            for <init>; <evaluated-for-each>; <counter>{}
+#### The range keyword
+- The `range` keyword is used to more easily iterate through the elements of an array, slice or map. It returns both the index and the value.
+
+            for index, value := range array|slice|map {}
+
+### Function
+#### Syntax
+- Create a function
+
+        func funcName() {}
+- Call a func
+        
+        funcName()
+- Function return 
+
+        func FunctionName(param1 type, param2 type){
+            return output
+        }
+
