@@ -29,4 +29,8 @@ func main() {
 	for _, value := range pow {
 		fmt.Printf("%d\n", value)
 	}
+
+	for i := 0; i < 10; i++ {
+		fmt.Printf("%d\n", i)
+	}
 }

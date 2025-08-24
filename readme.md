@@ -177,7 +177,7 @@ Slices are similar to arrays, but are more powerful and flexible
 ### Methods
 - Method is a function that has a `receiver`, that function belongs to a specific data type
 
-        func (receiver_name, receiver_type) methodName (param) return_type { // block code }
+        func (receiver, type) methodName (param) return_type { // block code }
 
 - Have two options :
   - Value receiver:
@@ -193,3 +193,7 @@ Slices are similar to arrays, but are more powerful and flexible
   - Value receiver: read data, calculate
   - Pointer receiver: Modify data, struct
 - Generate rule: if any method of a type uses a pointer receiver, then all other methods of that type should also use pointer receivers.
+
+### Interfaces
+
+- An interface is a type that defines a set of methods that another type must have in order to be considered to implement that interface

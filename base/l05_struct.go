@@ -9,14 +9,33 @@ type Person struct {
 	salary float32
 }
 
+type Employee struct {
+	person     Person
+	department string
+}
+
 func main() {
 	var pers1 Person
-
-	// Pers1 specification
 	pers1.name = "Hege"
 	pers1.age = 45
-	pers1.job = "Teacher"
-	pers1.salary = 6000
+	//pers1.job = "Teacher"
+	//pers1.salary = 6000
+	per := Person{
+		name:   "Hiep",
+		age:    22,
+		job:    "dev intern",
+		salary: 0}
 
-	fmt.Println(pers1)
+	fmt.Println(per)
+
+	e := Employee{
+		person: Person{
+			name: "Hiep",
+			age:  22,
+			job:  "dev intern",
+		},
+		department: "IT",
+	}
+
+	fmt.Println(e)
 }

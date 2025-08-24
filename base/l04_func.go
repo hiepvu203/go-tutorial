@@ -25,4 +25,10 @@ func main() {
 
 	age, name := GetInfo(22, "Hiep")
 	fmt.Println(age, name)
+
+	greet := func(name string) {
+		fmt.Println("Hello", name)
+	}
+
+	greet("Hiep")
 }

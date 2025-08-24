@@ -27,9 +27,9 @@ func main() {
 	val2, ok2 := c["Bergen"]
 	_, ok3 := c["Trondheim"]
 
-	fmt.Printf("val1\t%v\t%v\n", val1, ok1)
-	fmt.Printf("val2\t%v\t%v\n", val2, ok2)
-	fmt.Printf("val3\t%v\t\n", ok3)
+	fmt.Printf("val1\t%v\t%v\n", val1, ok1) // false
+	fmt.Printf("val2\t%v\t%v\n", val2, ok2) // true
+	fmt.Printf("val3\t%v\t\n", ok3)         // true
 
 	for k, v := range c {
 		fmt.Printf("%v\t%v\n", k, v)
