@@ -38,6 +38,13 @@ func pow(x, n, lim float64) float64 {
 }
 
 func main() {
+
+	name := "Xuan\nHiep"
+	fmt.Println(name)
+	// In ra:
+	// Xuan
+	// Hiep
+
 	fmt.Println(GetProfile())
 	fmt.Println(GetMyHome())
 	fmt.Println(sqrt(2), sqrt(-4))
