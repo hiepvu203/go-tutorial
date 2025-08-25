@@ -14,6 +14,6 @@ func say(s string) {
 
 func main() {
 	go say("world")
-	go say("hello")
+	go say("hello") // chạy song song
 	time.Sleep(2 * time.Second)
 }
